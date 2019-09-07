@@ -1,0 +1,61 @@
+ # config context path to "/" by setting an empty string
+spring.mail.host: host
+spring.mail.port: 80
+spring.mail.username: username
+spring.mail.password: password
+spring.mail.properties.mail.smtp.auth: true
+spring.mail.properties.mail.smtp.starttls.enable: true
+spring.mail.properties.mail.smtp.starttls.required: true
+
+ # config context path to "/" by setting an empty string
+server:
+  contextPath:
+  port: 3000
+
+# JACKSON
+spring:
+  jackson:
+    serialization:
+      write-dates-as-timestamps: false
+  datasource:
+
+    ## MYSQL
+    #url: jdbc:mysql://localhost/help_desk
+    #username: root
+    #password:
+    #driver-class-name: com.mysql.jdbc.Driver
+
+    ## MS SQLSERVER
+
+    driverClassName: com.microsoft.sqlserver.jdbc.SQLServerDriver
+    url: jdbc:sqlserver://localhost;databaseName=helpdesk
+    username: superuser
+    password: CloudBrain2018
+    platform: mssql
+
+  h2:
+    console:
+      enabled: true
+
+
+  jpa:
+    hibernate:
+      #ddl-auto: create-drop
+      ddl-auto: update
+
+
+jwt:
+  header: Authorization
+  secret: tasksSecret
+  expiration: 604800
+  route:
+    authentication:
+      path: auth
+      refresh: refresh
+
+
+#logging:
+#  level:
+#    org.springframework:
+#      security: DEBUG
+
